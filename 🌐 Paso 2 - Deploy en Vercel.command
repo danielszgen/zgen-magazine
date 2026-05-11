@@ -1,0 +1,61 @@
+#!/bin/bash
+
+PROJECT="/Users/daniels/Documents/Claude/Projects/Daniels zgen Magazine"
+cd "$PROJECT"
+
+clear
+echo ""
+echo "╔══════════════════════════════════════════════╗"
+echo "║   🌐  ZGEN MAGAZINE → VERCEL               ║"
+echo "╚══════════════════════════════════════════════╝"
+echo ""
+echo "   Vercel desplegará tu web en internet"
+echo "   con HTTPS gratis y dominio automático."
+echo ""
+echo "   ─────────────────────────────────────────"
+echo "   OPCIÓN RECOMENDADA: Conectar desde la web"
+echo "   ─────────────────────────────────────────"
+echo ""
+echo "   Es el método más sencillo:"
+echo "   1. Se abrirá vercel.com/new en tu navegador"
+echo "   2. Inicia sesión con tu cuenta de GitHub"
+echo "   3. Selecciona el repo 'zgen-magazine'"
+echo "   4. Haz clic en 'Deploy' — Vercel hace el resto"
+echo ""
+read -p "   Pulsa ENTER para abrir Vercel... "
+open "https://vercel.com/new"
+
+echo ""
+echo "   ─────────────────────────────────────────"
+echo "   Una vez desplegado, añade tu dominio:"
+echo "   ─────────────────────────────────────────"
+echo ""
+echo "   1. En Vercel → tu proyecto → Settings → Domains"
+echo "   2. Escribe: zgen.cloud"
+echo "   3. Vercel te dará los DNS a configurar"
+echo "   4. Ve al panel de tu registrador de dominio"
+echo "      y añade esos registros DNS"
+echo ""
+echo "   En 24-48h tu web estará en https://zgen.cloud"
+echo ""
+echo "   ─────────────────────────────────────────"
+echo "   OPCIÓN ALTERNATIVA: CLI (avanzado)"
+echo "   ─────────────────────────────────────────"
+echo ""
+read -p "   ¿Quieres intentar el deploy por terminal? (s/N): " CLI_CHOICE
+
+if [[ "$CLI_CHOICE" == "s" || "$CLI_CHOICE" == "S" ]]; then
+  echo ""
+  echo "   Instalando Vercel CLI y desplegando..."
+  echo "   (te pedirá login con GitHub en el navegador)"
+  echo ""
+  npx vercel --yes
+  echo ""
+fi
+
+echo ""
+echo "╔══════════════════════════════════════════════╗"
+echo "║   ✅  ¡Ya casi está en internet!           ║"
+echo "╚══════════════════════════════════════════════╝"
+echo ""
+read -p "Pulsa ENTER para cerrar..."
