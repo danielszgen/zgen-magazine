@@ -4,7 +4,7 @@ import { motion, useInView } from 'framer-motion'
 import { useRef, useState } from 'react'
 import { ArrowRight, Zap, Brain, Globe, User, Code2, ChevronRight, Eye, Camera, Layers, Users, Flame, Star } from 'lucide-react'
 import Header from '@/components/Header'
-import DNAViz from '@/components/DNAViz'
+import ZgenLogo from '@/components/ZgenLogo'
 import MatrixLoader from '@/components/MatrixLoader'
 
 // ─── Helpers ─────────────────────────────────────────────────────────────────
@@ -135,8 +135,8 @@ export default function HomePage() {
                 transition={{ duration: 0.6, delay: 0.1 }}
                 className="inline-flex items-center gap-2 mb-8"
               >
-                <span className="w-1.5 h-1.5 rounded-full bg-purple-light animate-pulse" />
-                <span className="font-mono text-xs tracking-[0.2em] text-purple-light uppercase">
+                <span className="w-1.5 h-1.5 rounded-full bg-green animate-pulse" style={{ boxShadow: '0 0 10px #3BF0A0' }} />
+                <span className="font-mono text-xs tracking-[0.2em] text-green uppercase">
                   www.zgen.cloud
                 </span>
               </motion.div>
@@ -148,7 +148,7 @@ export default function HomePage() {
                 className="font-display font-bold text-4xl md:text-5xl lg:text-[3.4rem] leading-[1.04] tracking-tight mb-6"
               >
                 La revista para una generación que quiere{' '}
-                <span className="text-gradient">reprogramarse.</span>
+                <span className="text-holo">reprogramarse.</span>
               </motion.h1>
 
               <motion.p
@@ -178,11 +178,11 @@ export default function HomePage() {
                 transition={{ duration: 0.6, delay: 0.55 }}
                 className="flex flex-wrap gap-4"
               >
-                <a href="#tribu" className="btn-brand">
+                <a href="#tribu" className="btn-signal">
                   <Zap size={14} />
                   Unirme al manifiesto
                 </a>
-                <a href="#sistema" className="btn-ghost">
+                <a href="#sistema" className="btn-glass">
                   Ver el sistema
                   <ChevronRight size={14} />
                 </a>
@@ -207,19 +207,21 @@ export default function HomePage() {
               </motion.div>
             </div>
 
-            {/* DNA */}
+            {/* Voxel-Z logo (interactive) */}
             <motion.div
               initial={{ opacity: 0, scale: 0.92 }}
               animate={matrixDone ? { opacity: 1, scale: 1 } : {}}
               transition={{ duration: 1.1, delay: 0.3, ease: easeOut }}
               className="flex justify-center lg:justify-end items-center relative"
             >
-              <div className="absolute w-72 h-72 rounded-full pointer-events-none" style={{
-                background: 'radial-gradient(ellipse, rgba(124,58,237,0.2) 0%, transparent 70%)',
+              <div className="absolute w-80 h-80 rounded-full pointer-events-none" style={{
+                background: 'radial-gradient(ellipse, rgba(59,240,160,0.18) 0%, transparent 70%)',
                 animation: 'pulseGlow 4s ease-in-out infinite',
                 top: '50%', left: '50%', transform: 'translate(-50%, -50%)',
               }} />
-              <DNAViz />
+              <div className="relative w-full max-w-[440px] mx-auto lg:ml-auto lg:mr-0">
+                <ZgenLogo />
+              </div>
             </motion.div>
           </div>
 
@@ -354,7 +356,7 @@ export default function HomePage() {
           <div className="relative section-wrap">
             <RevealSection className="mb-16">
               <div className="max-w-2xl">
-                <span className="font-mono text-xs tracking-[0.2em] text-purple-light uppercase mb-4 block">
+                <span className="font-mono text-xs tracking-[0.2em] text-green uppercase mb-4 block">
                   — El sistema
                 </span>
                 <h2 className="font-display font-bold text-3xl md:text-4xl lg:text-5xl leading-tight tracking-tight mb-5">
@@ -440,13 +442,13 @@ export default function HomePage() {
                       whileInView={{ opacity: 1, x: 0 }}
                       viewport={{ once: true, margin: '-40px' }}
                       transition={{ duration: 0.5, delay: i * 0.08, ease: easeOut }}
-                      className="card-glass flex items-start gap-4 px-5 py-4 group hover:border-purple-DEFAULT/40 transition-colors"
+                      className="card-glass flex items-start gap-4 px-5 py-4 group hover:border-green/40 transition-colors"
                     >
                       <div className="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded" style={{
-                        background: 'rgba(124,58,237,0.12)',
-                        border: '1px solid rgba(124,58,237,0.2)',
+                        background: 'rgba(59,240,160,0.12)',
+                        border: '1px solid rgba(59,240,160,0.25)',
                       }}>
-                        <Icon size={15} className="text-purple-light" />
+                        <Icon size={15} className="text-green" />
                       </div>
                       <p className="text-text-muted text-sm leading-relaxed pt-1 group-hover:text-text-primary transition-colors">
                         {trait.text}
@@ -469,7 +471,7 @@ export default function HomePage() {
 
           <div className="relative section-wrap max-w-3xl">
             <RevealSection>
-              <span className="font-mono text-xs tracking-[0.2em] text-purple-light uppercase mb-6 block">
+              <span className="font-mono text-xs tracking-[0.2em] text-green uppercase mb-6 block">
                 — Manifiesto
               </span>
               <h2 className="font-display font-bold text-3xl md:text-4xl lg:text-5xl leading-tight tracking-tight mb-10">
@@ -506,7 +508,7 @@ export default function HomePage() {
                   background: 'radial-gradient(ellipse 80% 80% at 50% -10%, rgba(124,58,237,0.07) 0%, transparent 60%)',
                 }} />
 
-                <span className="relative font-mono text-xs tracking-[0.2em] text-purple-light uppercase mb-4 block">
+                <span className="relative font-mono text-xs tracking-[0.2em] text-green uppercase mb-4 block">
                   — Señal diaria
                 </span>
                 <h2 className="relative font-display font-bold text-3xl md:text-4xl leading-tight tracking-tight mb-4">

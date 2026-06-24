@@ -11,19 +11,19 @@ const CHARS   = KATAKANA + LATIN
 const FONT_SIZE = 15       // px per cell
 const TRAIL_ALPHA = 0.055  // how quickly old characters fade
 const REVEAL_TIMINGS = [1600, 2150, 2700]   // ms: when each word appears
-const WORDS = ['WREAGH', 'IGH', 'PEDUNCLE']
+const WORDS = ['DANIELS', 'ZGEN', 'MAGAZINE']
 const TOTAL_MS = 3900      // ms until fade begins
 const FADE_MS  = 700       // fade duration
 
 // Brand palette for the rain
 const COLORS = {
-  head:   'rgba(230, 215, 255, 0.98)', // brightest — lead char
-  mid1:   'rgba(167, 139, 250, 0.85)', // violet
-  mid2:   'rgba(129, 140, 248, 0.65)', // indigo
+  head:   'rgba(200, 255, 232, 0.98)', // brightest — lead char
+  mid1:   'rgba(59, 240, 160, 0.88)',  // phosphor green (signature)
+  mid2:   'rgba(20, 168, 113, 0.62)',  // green deep
   tail1:  'rgba(96, 165, 250, 0.40)',  // blue
   tail2:  'rgba(34, 211, 238, 0.25)',  // cyan — far trail
   word:   '#FFFFFF',
-  wordGlow:'rgba(196, 181, 253, 0.9)',
+  wordGlow:'rgba(111, 255, 194, 0.9)',
 }
 
 // ─── Component ───────────────────────────────────────────────────────────────
@@ -152,8 +152,8 @@ export default function MatrixLoader({ onDone }: Props) {
                     textShadow: `
                       0 0 8px ${COLORS.wordGlow},
                       0 0 20px ${COLORS.wordGlow},
-                      0 0 45px rgba(124, 58, 237, 0.6),
-                      0 0 80px rgba(124, 58, 237, 0.3)
+                      0 0 45px rgba(59, 240, 160, 0.55),
+                      0 0 80px rgba(59, 240, 160, 0.3)
                     `,
                     lineHeight: 1,
                   }}
@@ -191,7 +191,7 @@ export default function MatrixLoader({ onDone }: Props) {
             fontFamily: "'JetBrains Mono', monospace",
             fontSize: '10px',
             letterSpacing: '0.15em',
-            color: 'rgba(167, 139, 250, 0.4)',
+            color: 'rgba(111, 255, 194, 0.45)',
             textTransform: 'uppercase',
           }}
         >

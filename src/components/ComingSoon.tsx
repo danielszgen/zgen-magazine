@@ -16,7 +16,7 @@ export default function ComingSoon({ label, title, description, eta }: Props) {
       <div className="absolute inset-0 dot-grid opacity-25 pointer-events-none" />
       {/* Glow */}
       <div className="absolute inset-0 pointer-events-none" style={{
-        background: 'radial-gradient(ellipse 60% 50% at 50% 40%, rgba(109,40,217,0.1) 0%, transparent 70%)',
+        background: 'radial-gradient(ellipse 60% 50% at 50% 40%, rgba(59,240,160,0.10) 0%, transparent 70%)',
       }} />
 
       <Header />
@@ -24,7 +24,7 @@ export default function ComingSoon({ label, title, description, eta }: Props) {
       <main className="relative flex-1 flex items-center justify-center px-6 py-24">
         <div className="max-w-xl text-center">
           {/* Eyebrow */}
-          <span className="font-mono text-xs tracking-[0.2em] text-purple-light uppercase mb-5 block">
+          <span className="font-mono text-xs tracking-[0.2em] text-green uppercase mb-5 block">
             {label}
           </span>
 
@@ -41,7 +41,7 @@ export default function ComingSoon({ label, title, description, eta }: Props) {
           {/* ETA badge */}
           {eta && (
             <div className="inline-flex items-center gap-2 card-glass px-4 py-2 mb-10">
-              <span className="w-1.5 h-1.5 rounded-full bg-purple-light animate-pulse" />
+              <span className="w-1.5 h-1.5 rounded-full bg-green animate-pulse" />
               <span className="font-mono text-xs text-text-muted tracking-wide">{eta}</span>
             </div>
           )}
@@ -57,7 +57,7 @@ export default function ComingSoon({ label, title, description, eta }: Props) {
           {/* Decorative DNA-like dots */}
           <div className="mt-16 flex justify-center gap-2 opacity-20">
             {[...Array(7)].map((_, i) => (
-              <div key={i} className="w-1.5 h-1.5 rounded-full bg-purple-light"
+              <div key={i} className="w-1.5 h-1.5 rounded-full bg-green"
                 style={{ opacity: Math.abs(3 - i) / 3 * 0.8 + 0.2 }} />
             ))}
           </div>
